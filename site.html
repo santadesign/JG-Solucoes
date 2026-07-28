@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JG Soluções Industriais | Formatos • Colarinhos • Adequação NR-12</title>
+    <style>
+        /* Reset básico e Fontes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Paleta de Cores - Dark Professional (Sofisticado e Industrial) */
+        :root {
+            --fundo-principal: #0b0c10;
+            --fundo-secundario: #1f2833;
+            --fundo-cards: #14171c;
+            --texto-claro: #c5c6c7;
+            --branco: #ffffff;
+            --destaque: #d97706; /* Laranja industrial / Âmbar */
+            --destaque-hover: #b45309;
+            --bordas: #2d3748;
+        }
+
+        body {
+            background-color: var(--fundo-principal);
+            color: var(--texto-claro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Cabeçalho / Navbar */
+        header {
+            background-color: var(--fundo-secundario);
+            color: var(--branco);
+            padding: 20px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--destaque);
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--branco);
+            transition: text-shadow 0.3s ease;
+        }
+
+        header h1:hover {
+            text-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+        }
+
+        header h1 span {
+            color: var(--destaque);
+        }
+        
+        .subtitle {
+            font-size: 13px;
+            color: var(--texto-claro);
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        /* Animação Hover no Menu (Sublinhado Dinâmico) */
+        nav ul li a {
+            color: var(--texto-claro);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            transition: color 0.3s ease;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--destaque);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--branco);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Botões Globais - Animação de Hover */
+        .btn-header, .btn-hero, .btn-submit {
+            background-color: var(--destaque);
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 2px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-header {
+            padding: 10px 25px;
+            font-size: 14px;
+        }
+
+        .btn-hero {
+            padding: 15px 40px;
+            font-size: 16px;
+        }
+        
+        .btn-submit {
+            padding: 15px 30px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .btn-header:hover, .btn-hero:hover, .btn-submit:hover {
+            background-color: var(--destaque-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+            color: #fff;
+        }
+        
+        .btn-header:active, .btn-hero:active, .btn-submit:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(217, 119, 6, 0.4);
+        }
+
+        /* Oculta botão Mobile e Ícone no Desktop */
+        .nav-btn-mobile { display: none; }
+        .menu-toggle { display: none; }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(to right, rgba(11, 12, 16, 0.95), rgba(31, 40, 51, 0.8)), url('WhatsApp Image 2026-07-26 at 11.44.51.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: var(--branco);
+            padding: 120px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            max-width: 55%;
+        }
+
+        .hero h2 {
+            font-size: 44px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: var(--texto-claro);
+        }
+
+        .hero-video-container {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-video-container video {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid var(--bordas);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .hero-video-container video:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            border-color: var(--destaque);
+        }
+
+        /* Seção Sobre / Diferenciais */
+        .sobre {
+            padding: 80px 5%;
+            background-color: var(--fundo-principal);
+            text-align: center;
+        }
+
+        .sobre h3 {
+            font-size: 32px;
+            color: var(--branco);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .sobre .linha {
+            width: 80px;
+            height: 3px;
+            background-color: var(--destaque);
+            margin: 0 auto 50px auto;
+            transition: width 0.4s ease;
+        }
+        
+        .sobre:hover .linha {
+            width: 120px;
+        }
+
+        .diferenciais-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .diferencial-card {
+            background-color: var(--fundo-cards);
+            padding: 40px 20px;
+            border-radius: 4px;
+            flex: 1;
+            border-top: 3px solid var(--destaque);
+            border-bottom: 1px solid var(--bordas);
+            border-left: 1px solid var(--bordas);
+            border-right: 1px solid var(--bordas);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        
+        .diferencial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+            border-top: 3px solid var(--destaque-hover);
+            border-bottom-color: rgba(217, 119, 6, 0.2);
+        }
+
+        .diferencial-card h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--branco);
+            transition: color 0.3s ease;
+        }
+        
+        .diferencial-card:hover h4 {
+            color: var(--destaque);
+        }
+
+        /* Produtos e Serviços */
+        .produtos {
+            padding: 80px 5%;
+            background-color: var(--fundo-secundario);
+        }
+
+        .produtos h3 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--branco);
+            text-transform: uppercase;
+        }
+
+        .produtos .linha {
+            width: 80px;
+            height: 3px;
+            background-color: var(--destaque);
+            margin: 0 auto 50px auto;
+            transition: width 0.4s ease;
+        }
+
+        .produtos:hover .linha {
+            width: 120px;
+        }
+
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .produto-card {
+            background-color: var(--fundo-cards);
+            border: 1px solid var(--bordas);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            border-color: rgba(217, 119, 6, 0.4);
+        }
+
+        .img-wrapper {
+            overflow: hidden;
+            width: 100%;
+            height: 250px;
+        }
+
+        .produto-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .produto-card:hover .produto-img {
+            transform: scale(1.1);
+        }
+
+        .produto-info {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+            background-color: var(--fundo-cards);
+            transition: background-color 0.4s ease;
+        }
+
+        .produto-info h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--branco);
+            transition: color 0.3s ease;
+        }
+
+        .produto-card:hover .produto-info h4 {
+            color: var(--destaque);
+        }
+
+        /* Contato */
+        .contato {
+            padding: 80px 5%;
+            background-color: var(--fundo-principal);
+            color: var(--branco);
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .contato-info {
+            width: 45%;
+        }
+
+        .contato-info h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .contato-info h3 span {
+            color: var(--destaque);
+        }
+
+        .contato-info p {
+            margin-bottom: 15px;
+            color: var(--texto-claro);
+        }
+
+        .contato-form {
+            width: 50%;
+            background-color: var(--fundo-secundario);
+            padding: 40px;
+            border-radius: 4px;
+            border: 1px solid var(--bordas);
+            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        
+        .contato-form:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: rgba(217, 119, 6, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--texto-claro);
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--fundo-principal);
+            border: 1px solid var(--bordas);
+            border-radius: 2px;
+            font-size: 16px;
+            color: var(--branco);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .form-group input:hover, .form-group textarea:hover {
+            border-color: rgba(217, 119, 6, 0.5);
+            background-color: rgba(11, 12, 16, 0.7);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--destaque);
+            box-shadow: 0 0 8px rgba(217, 119, 6, 0.3);
+            background-color: var(--fundo-principal);
+        }
+        
+        .form-group input:focus + label, .form-group textarea:focus + label {
+            color: var(--destaque);
+        }
+
+        footer {
+            background-color: #050608;
+            color: #6b7280;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            border-top: 1px solid var(--bordas);
+        }
+
+        /* -------------------------------------------
+           MENU LATERAL (OFF-CANVAS) & RESPONSIVIDADE
+           ------------------------------------------- */
+
+        @media (max-width: 900px) {
+            header {
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+            .btn-desktop {
+                display: none; 
+            }
+
+            .menu-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                cursor: pointer;
+                z-index: 1000;
+                margin-left: auto;
+            }
+            .menu-toggle span {
+                display: block;
+                width: 30px;
+                height: 3px;
+                background-color: var(--branco);
+                transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+                border-radius: 2px;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+                background-color: var(--destaque);
+            }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+                background-color: var(--destaque);
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%; 
+                width: 280px;
+                height: 100vh;
+                background-color: var(--fundo-secundario);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s ease-in-out;
+                z-index: 999;
+                border-left: 3px solid var(--destaque);
+                box-shadow: -5px 0 20px rgba(0,0,0,0.7);
+            }
+            nav.active {
+                right: 0; 
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+                width: 100%;
+            }
+            nav ul li a {
+                font-size: 18px;
+            }
+            .nav-btn-mobile {
+                display: block;
+                margin-top: 15px;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+            body.menu-open::before {
+                content: '';
+                position: fixed;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.6);
+                z-index: 998;
+            }
+
+            .hero, .contato {
+                flex-direction: column;
+            }
+            .hero-content, .hero-video-container, .contato-info, .contato-form {
+                width: 100%;
+                max-width: 100%;
+            }
+            .hero h2 { font-size: 32px; }
+            .diferenciais-grid { flex-direction: column; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 80px 5%; text-align: center; }
+            .sobre, .produtos, .contato { padding: 60px 5%; }
+            .produtos-grid { grid-template-columns: 1fr; }
+            .contato-form { padding: 30px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 20px; }
+            .subtitle { font-size: 11px; }
+            .hero h2 { font-size: 28px; }
+            .hero p { font-size: 16px; margin-bottom: 25px; }
+            .sobre h3, .produtos h3, .contato-info h3 { font-size: 26px; }
+            .menu-toggle span { width: 25px; gap: 5px; } 
+        }
+    </style>
+</head>
+<body id="home">
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-container">
+            <h1>JG <span>Soluções Industriais</span></h1>
+            <div class="subtitle">Formatos • Colarinhos • Adequação NR-12</div>
+        </div>
+
+        <!-- Botão Hambúrguer -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">A Empresa</a></li>
+                <li><a href="#produtos">Soluções</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <!-- Botão do WhatsApp entra no Menu Lateral no Mobile -->
+                <li class="nav-btn-mobile"><a href="#contato" class="btn-header">Fale no WhatsApp</a></li>
+            </ul>
+        </nav>
+        <a href="#contato" class="btn-header btn-desktop">Fale no WhatsApp</a>
+    </header>
+
+    <!-- Destaque / Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Excelência em Colarinhos e Segurança NR-12</h2>
+            <p>Soluções completas para a sua indústria. Especialistas em desenvolvimento de formatos para empacotadoras e adequação de maquinários às normas de segurança NR-12 com alto padrão técnico.</p>
+            <a href="#contato" class="btn-hero">Solicitar Orçamento</a>
+        </div>
+        <div class="hero-video-container">
+            <video autoplay loop muted playsinline>
+                <source src="WhatsApp Video 2026-07-27 at 13.26.58.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
+    </section>
+
+    <!-- Sobre a Empresa -->
+    <section class="sobre" id="sobre">
+        <h3>Por que escolher a JG Soluções Industriais?</h3>
+        <div class="linha"></div>
+        <div class="diferenciais-grid">
+            <div class="diferencial-card">
+                <h4>Qualidade em Inox</h4>
+                <p>Fabricação de tubos formadores e colarinhos em aço inox de altíssima resistência, com acabamento refinado para otimizar o fluxo na sua empacotadora.</p>
+            </div>
+            <div class="diferencial-card">
+                <h4>Segurança e Normas</h4>
+                <p>Executamos a adequação NR-12 completa para tornos e fresas, garantindo a proteção física dos operadores e conformidade com a legislação.</p>
+            </div>
+            <div class="diferencial-card">
+                <h4>Projetos Sob Medida</h4>
+                <p>Do desenho à fabricação. Adaptamos nossos projetos para qualquer marca de empacotadora e estrutura de usinagem industrial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos e Soluções -->
+    <section class="produtos" id="produtos">
+        <h3>Nossas Soluções</h3>
+        <div class="linha"></div>
+        <div class="produtos-grid">
+            
+            <div class="produto-card">
+                <div class="img-wrapper">
+                    <img class="produto-img" src="WhatsApp Image 2026-07-27 at 13.26.50 (1).jpeg" alt="Conjunto Formador Instalado">
+                </div>
+                <div class="produto-info">
+                    <h4>Conjunto Formador e Colarinho</h4>
+                    <p>Fabricado sob medida. Ideal para embalagens estruturadas, garantindo fechamento perfeito e estabilidade no processo de empacotamento.</p>
+                </div>
+            </div>
+
+            <div class="produto-card">
+                <div class="img-wrapper">
+                    <img class="produto-img" src="WhatsApp Image 2026-07-27 at 13.26.49.jpeg" alt="Colarinho Especial Texturizado">
+                </div>
+                <div class="produto-info">
+                    <h4>Formatos Especiais</h4>
+                    <p>Colarinhos com acabamento especial anti-aderente (texturizado), facilitando o escoamento de produtos difíceis e aumentando a produtividade.</p>
+                </div>
+            </div>
+            
+            <div class="produto-card">
+                <div class="img-wrapper">
+                    <img class="produto-img" src="WhatsApp Image 2026-07-27 at 13.26.50.jpeg" alt="Colarinho Visão Frontal">
+                </div>
+                <div class="produto-info">
+                    <h4>Instalação e Suporte</h4>
+                    <p>Além da fabricação, garantimos que o conjunto formador funcione perfeitamente integrado à sua linha de produção atual.</p>
+                </div>
+            </div>
+
+            <div class="produto-card">
+                <div class="img-wrapper">
+                    <img class="produto-img" src="WhatsApp Image 2026-07-26 at 11.44.52 (1).jpeg" alt="Adequação NR-12 Tornos">
+                </div>
+                <div class="produto-info">
+                    <h4>Adequação NR-12 para Tornos</h4>
+                    <p>Instalação de proteções mecânicas com intertravamento e escudos monolíticos, garantindo a total segurança física do operador.</p>
+                </div>
+            </div>
+            
+            <div class="produto-card">
+                <div class="img-wrapper">
+                    <img class="produto-img" src="WhatsApp Image 2026-07-26 at 11.44.52 (2).jpeg" alt="Proteção de Máquinas e Grades">
+                </div>
+                <div class="produto-info">
+                    <h4>Proteções e Barreiras Físicas</h4>
+                    <p>Desenvolvimento de grades e enclausuramento sob medida para maquinário pesado, com foco em ergonomia e prevenção de acidentes.</p>
+                </div>
+            </div>
+            
+            <div class="produto-card">
+                <div class="img-wrapper">
+                    <img class="produto-img" src="WhatsApp Image 2026-07-26 at 11.44.52.jpeg" alt="Usinagem de Precisão e Manutenção">
+                </div>
+                <div class="produto-info">
+                    <h4>Usinagem e Fresamento</h4>
+                    <p>Estrutura completa com equipamentos robustos para manutenção, reparo e fabricação minuciosa de peças de reposição industrial.</p>
+                </div>
+            </div>
+            
+            <div class="produto-card">
+                <div class="img-wrapper">
+                    <img class="produto-img" src="WhatsApp Image 2026-07-26 at 11.46.18.jpeg" alt="Acessórios de Segurança e Proteções">
+                </div>
+                <div class="produto-info">
+                    <h4>Componentes de Segurança</h4>
+                    <p>Fornecemos proteções específicas homologadas, como escudos articuláveis para placa e proteções deslizantes para adequação imediata.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <div class="contato-info">
+            <h3>Solicite um <span>Orçamento</span></h3>
+            <p>Nossa equipe técnica está pronta para entender a necessidade da sua indústria, seja no desenvolvimento de formatos para empacotamento ou em projetos de segurança do trabalho.</p>
+            <br>
+            <p><strong>E-mail:</strong> contato@jgsolucoesindustriais.com.br</p>
+            <p><strong>Telefone:</strong> (11) 90000-0000</p>
+            <p><strong>Endereço:</strong> Mauá - SP</p>
+        </div>
+        <div class="contato-form">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail corporativo">
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Detalhes do Projeto</label>
+                <textarea id="mensagem" rows="4" placeholder="Descreva sua necessidade (Colarinhos, Adequação NR-12, Manutenção)..."></textarea>
+            </div>
+            <button type="button" class="btn-submit">Enviar Solicitação</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 JG Soluções Industriais. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script do Menu Mobile -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const body = document.body;
+
+        // Abrir/Fechar o Menu ao clicar no ícone
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Fechar o menu automaticamente caso o usuário clique num link da Navbar
+        document.querySelectorAll('#nav-menu ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+    </script>
+</body>
+</html>
